@@ -146,8 +146,7 @@
   transition: background-color .4s;
 }
 
-#create .wrapper-items li.active,
-#create .wrapper-items li:hover {
+#create .wrapper-items li.selected {
   background-color: #E1FAEC;
 }
 
@@ -156,9 +155,20 @@
 }
 
 #create .wrapper-items li span {
-  display: block;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   text-align: center;
   color: var(--color-primary);
+
+  margin-top: 15px;
+}
+
+#create .wrapper-items li.selected span {
+  font-weight: 700;
 }
 
 #create form button {
