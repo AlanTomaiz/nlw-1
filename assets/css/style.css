@@ -28,3 +28,69 @@ h1, h2, h3, h4, h5, h6 {
 button {
   cursor: pointer;
 }
+
+#modal {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background: #000000e0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal .content {
+  width: 90%;
+  max-width: 420px;
+}
+
+#modal h4 {
+  display: block;
+
+  color: #FFF;
+  font-size: 3.4rem;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+#modal form {
+  display: flex;
+  flex-direction: column;
+}
+
+#modal form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  border: 0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+
+  font-size: 1.6rem;
+  background: #F0F0F5;
+}
+
+#modal form button {
+  border: 0;
+  border-radius: 8px;
+  padding: 16px;
+
+  background-color: #34CB79;
+  color: #FFF;
+  font-size: 1.6rem;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: background-color .4s;
+}
+
+#modal form button:hover {
+  background-color: #2FB86E;
+}
