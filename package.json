@@ -1,0 +1,13 @@
+{
+  "name": "ecoleta",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "repository": "https://github.com/AlanTomaiz/nlw-1.git",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
