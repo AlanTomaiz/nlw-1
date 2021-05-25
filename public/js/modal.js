@@ -3,9 +3,9 @@ const getModal = () => {
 }
 
 const showModal = () => {
-  getModal().classList.remove('hide');
+  getModal()?.classList.remove('hide');
 }
 
 const hideModal = () => {
-  getModal().classList.add('hide');
+  getModal()?.classList.add('hide');
 }

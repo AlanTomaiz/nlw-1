@@ -1,60 +1,27 @@
-<!DOCTYPE html>
-<html lang="pr-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ecoleta</title>
+{% extends "components/layout.html" %}
+{% block content %}
+<link rel="stylesheet" href="/css/home.css">
+<div id="home">
+  <div class="content">
+    <header>
+      <a href="/">
+        <img src="/imgs/logo.svg" alt="Ecoleta">
+      </a>
+      <a href="/create">
+        <span></span>
+        Cadastre um ponto de coleta
+      </a>
+    </header>
 
-  <!-- Fontes -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/home.css">
-</head>
-<body>
-  <div id="home">
-    <div class="content">
-      <header>
-        <a href="/">
-          <img src="/imgs/logo.svg" alt="Ecoleta">
-        </a>
-        <a href="/create">
-          <span></span>
-          Cadastre um ponto de coleta
-        </a>
-      </header>
-
-      <main>
-        <h1>Seu marketplace de coleta de resíduos.</h1>
-        <p>Ajudamos pessoas a encontrar pontos de coleta de forma eficiente.</p>
-        <button onclick="showModal()">
-          <span></span>
-          <strong>Pesquisar ponto de coleta</strong>
-        </button>
-      </main>
-    </div>
+    <main>
+      <h1>Seu marketplace de coleta de resíduos.</h1>
+      <p>Ajudamos pessoas a encontrar pontos de coleta de forma eficiente.</p>
+      <button onclick="showModal()">
+        <span></span>
+        <strong>Pesquisar ponto de coleta</strong>
+      </button>
+    </main>
   </div>
-
-  <div id="modal" class="hide">
-    <div class="content">
-      <div class="close" onclick="hideModal()">
-        fechar
-      </div>
-      <h4>Pontos de coleta</h4>
-      <form>
-        <select name="state">
-          <option value="">Selecione um estado</option>
-        </select>
-        <select name="city">
-          <option value="">Selecione uma cidade</option>
-        </select>
-        <button type="submit">Buscar</button>
-      </form>
-    </div>
-  </div>
-
-  <script src="/js/modal.js"></script>
-</body>
-</html>
+</div>
+{% include "components/modal.html" %}
+{% endblock content %}
