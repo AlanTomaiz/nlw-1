@@ -15,6 +15,12 @@ html {
   font-family: 'Roboto', sans-serif;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 body {
   font-size: 1.6rem;
   background: #E5E5E5;

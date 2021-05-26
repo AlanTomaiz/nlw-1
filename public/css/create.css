@@ -36,7 +36,7 @@
 }
 
 #create form {
-  width: 90%;
+  width: 100%;
   max-width: 736px;
 
   margin: 0 auto 60px;
@@ -126,7 +126,7 @@
 
 #create .wrapper-items {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 16px;
 }
 
@@ -187,4 +187,28 @@
 
 #create form button:hover {
   background-color: #2FB86E;
+}
+
+@media (max-width: 600px) {
+  #create form {
+    padding: 15px;
+  }
+
+  #create form fieldset {
+    margin-top: 30px;
+  }
+
+  #create form .input-group {
+    flex-direction: column;
+  }
+
+  #create form fieldset legend {
+    align-items: unset;
+    flex-direction: column;
+  }
+
+  #create form .input-group .input-field {
+    max-width: none !important;
+    margin-left: 0 !important;
+  }
 }

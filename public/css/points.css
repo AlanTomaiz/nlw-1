@@ -1,13 +1,16 @@
+body {
+  background: #FFF;
+}
+
 body::before {
   content: "";
 
-  position: fixed;
-  top: 12vw;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: absolute;
 
-  background: #FFF;
+  width: 100vw;
+  height: 30%;
+
+  background: #E5E5E5;
   z-index: -1;
 }
 
@@ -17,7 +20,7 @@ body::before {
 
   width: 90%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin: 0 auto 40px;
 }
 
 #points header {
@@ -52,19 +55,24 @@ body::before {
   display: block;
   margin-bottom: 24px;
 
-  font-size: 16px;
+  font-size: 1.6rem;
   color: var(--color-gray);
 }
 
 #points .wrapper-points {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
 }
 
 #points .wrapper-points .point {
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
   overflow: hidden;
+}
+
+#points .point img {
+  width: 100%;
+  object-fit: cover;
 }
 
 #points .point h3 {
@@ -88,5 +96,5 @@ body::before {
 
   font-size: 1.6rem;
   color: var(--color-gray);
-  line-height: 25px;
+  line-height: 2.5rem;
 }
