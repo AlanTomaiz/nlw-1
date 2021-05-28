@@ -12,55 +12,27 @@
     </a>
   </header>
 
+  {% if points.length > 0 %}
   <div class="total">
-    <strong>2 pontos</strong> encontrados
+    <strong>{{ points.length }} pontos</strong> encontrados.
   </div>
   <div class="wrapper-points">
+    {% for point in points %}
     <div class="point">
-      <img src="https://mid.curitiba.pr.gov.br/2012/capa/00114939.jpg" alt="Colectoria">
-      <h3>Colectoria</h3>
-      <strong>Resíduos Eletrônicos, Lâmpadas</strong>
+      <img src="{{ point.photo }}" alt="{{ point.name }}">
+      <h3>{{ point.name }}</h3>
+      <strong>{{ point.items }}</strong>
       <div>
-        <span>Guilherme Gemballa, Nº 260</span>
-        <span>Jardim América, Rio do Sul - SC</span>
+        <span>{{ point.address }}, Nº {{ point.number }}</span>
+        <span>{{ point.city }} - {{ point.state }}</span>
       </div>
     </div>
-    <div class="point">
-      <img src="https://www.tombstonereciclagem.com.br/imagens/informacoes/coleta-residuo-papel-e-papelao-03.jpg" alt="Colectoria">
-      <h3>Colectoria</h3>
-      <strong>Resíduos Eletrônicos, Lâmpadas</strong>
-      <div>
-        <span>Guilherme Gemballa, Nº 260</span>
-        <span>Jardim América, Rio do Sul - SC</span>
-      </div>
-    </div>
-    <div class="point">
-      <img src="https://www.tombstonereciclagem.com.br/imagens/informacoes/coleta-residuo-papel-e-papelao-03.jpg" alt="Colectoria">
-      <h3>Colectoria</h3>
-      <strong>Resíduos Eletrônicos, Lâmpadas</strong>
-      <div>
-        <span>Guilherme Gemballa, Nº 260</span>
-        <span>Jardim América, Rio do Sul - SC</span>
-      </div>
-    </div>
-    <div class="point">
-      <img src="https://www.tombstonereciclagem.com.br/imagens/informacoes/coleta-residuo-papel-e-papelao-03.jpg" alt="Colectoria">
-      <h3>Colectoria</h3>
-      <strong>Resíduos Eletrônicos, Lâmpadas</strong>
-      <div>
-        <span>Guilherme Gemballa, Nº 260</span>
-        <span>Jardim América, Rio do Sul - SC</span>
-      </div>
-    </div>
-    <div class="point">
-      <img src="https://www.tombstonereciclagem.com.br/imagens/informacoes/coleta-residuo-papel-e-papelao-03.jpg" alt="Colectoria">
-      <h3>Colectoria</h3>
-      <strong>Resíduos Eletrônicos, Lâmpadas</strong>
-      <div>
-        <span>Guilherme Gemballa, Nº 260</span>
-        <span>Jardim América, Rio do Sul - SC</span>
-      </div>
-    </div>
+    {% endfor %}
   </div>
+  {% else %}
+  <div class="total">
+    <strong>Nenhum</strong> ponto encontrados.
+  </div>
+  {% endif %}
 </div>
 {% endblock content %}

@@ -66,6 +66,7 @@ body::before {
 }
 
 #points .wrapper-points .point {
+  max-width: 400px;
   border-radius: 8px;
   overflow: hidden;
 }

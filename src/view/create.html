@@ -19,10 +19,15 @@
       <legend>
         <h2>Dados da entidade</h2>
       </legend>
-
-      <div class="input-field">
-        <label for="name">Nome da entidade</label>
-        <input name="name">
+      <div class="input-group">
+        <div class="input-field">
+          <label for="name">Nome da entidade</label>
+          <input name="name">
+        </div>
+        <div class="input-field">
+          <label for="name">Foto (URL)</label>
+          <input type="url" name="photo" placeholder="http://">
+        </div>
       </div>
       <div class="input-group">
         <div class="input-field">
@@ -89,5 +94,6 @@
     </button>
   </form>
 </div>
+{% include "components/modal-success.html" %}
 <script src="/js/main.js"></script>
 {% endblock content %}

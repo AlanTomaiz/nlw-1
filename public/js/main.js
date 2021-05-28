@@ -54,27 +54,50 @@ const handleCreatePoint = async (button) => {
   const formData = { items: items.join(', ') };
   const form = document.querySelectorAll('#create-form input, #create-form select');
 
-  form.forEach(elem => {
-    formData[elem.getAttribute('name')] = elem.value;
-  });
+  try {
+    form.forEach(elem => {
+      if (!elem.value) {
+        elem.setAttribute('style', 'border: 1px solid red');
+        elem.focus();
 
-  button.disabled = true;
-  button.innerHTML = 'Aguarde...';
+        throw Error();
+      }
 
-  const request = {
-    method: 'POST',
-    body: JSON.stringify(formData),
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      formData[elem.getAttribute('name')] = elem.value;
+    });
+
+    if (items.length == 0) {
+      alert('Selecione um item de coleta.');
+
+      throw Error();
     }
+
+    button.disabled = true;
+    button.innerHTML = 'Aguarde...';
+
+    const request = {
+      method: 'POST',
+      body: JSON.stringify(formData),
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      }
+    }
+
+    await fetch('/create/', request)
+      .then(response => response.json());
+
+    showModal();
+
+    setTimeout(() => {
+      window.location.href = '/';
+    }, 2000);
+
+    button.disabled = false;
+    button.innerHTML = 'Cadastrar ponto de coleta';
+  } catch {
+    console.error('Deu ruim!');
   }
-
-  const response = await fetch('/create/', request)
-    .then(response => response.json());
-
-  button.disabled = false;
-  button.innerHTML = 'Cadastrar ponto de coleta';
 }
 
 populateStates();

@@ -83,6 +83,11 @@ button {
   background-size: cover;
 }
 
+#modal img {
+  display: block;
+  margin: 0 auto 30px;
+}
+
 #modal h4 {
   display: block;
 
@@ -94,37 +99,34 @@ button {
 
 #modal form {
   display: flex;
-  flex-direction: column;
 }
 
-#modal form select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
+#modal form input {
+  flex: 1;
 
   border: 0;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 8px;
+  border-radius: 8px 0 0 8px;
+  padding: 18px;
 
   font-size: 1.6rem;
   background: #F0F0F5;
 }
 
 #modal form button {
-  border: 0;
-  border-radius: 8px;
-  padding: 16px;
+  width: 130px;
 
-  background-color: #34CB79;
+  border: 0;
+  border-radius: 0 8px 8px 0;
+
   color: #FFF;
-  font-size: 1.6rem;
   font-weight: 700;
+  font-size: 1.6rem;
+  background-color: #34CB79;
 
   cursor: pointer;
   transition: background-color .4s;
 }
 
 #modal form button:hover {
-  background-color: #2FB86E;
+  background: #2FB86E;
 }

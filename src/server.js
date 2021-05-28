@@ -26,15 +26,14 @@ server.get('/create', (request, response) => {
 
 // Cadastro de pontos
 server.post('/create', (request, response) => {
-  const data = Object.values(request.body).map(item => item);
+  const data = request.body;
+  const insertData = [data.photo, data.items, data.name, data.address, data.number, data.state, data.city];
 
   mysql.query(`
-  INSERT INTO points (items, name, address, number, state, city) VALUES (?, ?, ?, ?, ?, ?)
-  `, data, (error) => {
+  INSERT INTO points (photo, items, name, address, number, state, city) VALUES (?, ?, ?, ?, ?, ?, ?)
+  `, insertData, (error) => {
     if (error) {
-      console.log(error);
-
-      return response.send({ status: 'error', message: 'Deu ruim.' });
+      return response.status(400).send({ status: 'error', message: 'Deu ruim.' });
     }
 
     return response.send({ status: 'success' });
@@ -43,7 +42,15 @@ server.post('/create', (request, response) => {
 
 // Apresentação da page Points
 server.get('/points', (request, response) => {
-  return response.render('points.html');
+  const { search } = request.query;
+
+  mysql.query(`SELECT * FROM points WHERE city LIKE '%${search}%' OR state LIKE '%${search}%'`, (error, data) => {
+    if (error) {
+      return response.render('points.html', { points: [] });
+    }
+
+    return response.render('points.html', { points: data });
+  });
 });
 
 server.listen(3333, () => console.log('# Server start'));
