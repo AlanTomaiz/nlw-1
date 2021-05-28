@@ -1,8 +1,4 @@
 <p align="center">
-  <img src=".github/ecoleta.svg" width="220px">
-</p>
-
-<p align="center">
   <img alt="Ecoleta" src=".github/ecoleta.png" width="100%">
 </p>
 
