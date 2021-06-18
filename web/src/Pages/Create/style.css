@@ -1,0 +1,155 @@
+#create-page {
+  width: 100vw;
+  height: 100vh;
+}
+
+#create-page .content {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 34px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#create-page .content header {
+  width: 100%;
+  margin: 48px 0 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#create-page .content header a {
+  color: var(--title-color);
+  font-weight: 500;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+}
+
+#create-page .content header a span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+
+  margin-right: 16px;
+  background: url('../../assets/left-arrow.svg');
+}
+
+#create-page .content form {
+  width: 100%;
+  max-width: 730px;
+
+  margin: 60px auto;
+  padding: 38px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+#create-page .content form h1 {
+  font-size: 36px;
+  line-height: 46px;
+}
+
+#create-page .content form fieldset {
+  border: 0;
+  margin-top: 64px;
+}
+
+#create-page .content form legend {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 40px;
+}
+
+#create-page .content form legend h2 {
+  font-size: 24px;
+  line-height: 26px;
+}
+
+#create-page .content form .field-group {
+  flex: 1;
+
+  display: flex;
+}
+
+#create-page .content form .field-group .field + .field {
+  margin-left: 16px;
+}
+
+#create-page .content form .field {
+  width: 100%;
+  margin-bottom: 24px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#create-page .content form .field-cut {
+  max-width: 230px;
+}
+
+#create-page .content form .field label {
+  font-size: 14px;
+  line-height: 16px;
+
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+#create-page .content form .field input,
+#create-page .content form .field select {
+  border: 0;
+  border-radius: 8px;
+  padding: 16px;
+
+  color: #6C6C80;
+  font-size: 16px;
+
+  background: #F0F0F5;
+  outline: none;
+}
+
+#create-page .content form .field select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+#create-page .content form .items-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+#create-page .content form .items-group li {
+  height: 180px;
+  padding: 38px 24px 16px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#create-page .content form .items-group li span {
+  display: flex;
+
+  margin-top: 34px;
+  color: var(--text-color);
+  text-align: center;
+}
+
+#create-page .content form .items-group li.selected,
+#create-page .content form .items-group li:hover {
+  background: #E1FAEC;
+}
