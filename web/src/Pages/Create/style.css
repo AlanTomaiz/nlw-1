@@ -48,6 +48,9 @@
   padding: 38px;
   background: #fff;
   border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
 }
 
 #create-page .content form h1 {
@@ -75,8 +78,6 @@
 }
 
 #create-page .content form .field-group {
-  flex: 1;
-
   display: flex;
 }
 
@@ -93,7 +94,7 @@
 }
 
 #create-page .content form .field-cut {
-  max-width: 230px;
+  max-width: calc(100% / 3);
 }
 
 #create-page .content form .field label {
@@ -104,8 +105,7 @@
   margin-bottom: 8px;
 }
 
-#create-page .content form .field input,
-#create-page .content form .field select {
+#create-page .content form .field input {
   border: 0;
   border-radius: 8px;
   padding: 16px;
@@ -115,12 +115,6 @@
 
   background: #F0F0F5;
   outline: none;
-}
-
-#create-page .content form .field select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
 }
 
 #create-page .content form .items-group {
@@ -152,4 +146,24 @@
 #create-page .content form .items-group li.selected,
 #create-page .content form .items-group li:hover {
   background: #E1FAEC;
+}
+
+#create-page .content form button {
+  width: 260px;
+  height: 56px;
+
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 24px;
+  background: var(--primary-color);
+
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+#create-page .content form button:hover {
+  opacity: .8;
 }

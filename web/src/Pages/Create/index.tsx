@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import api from '../../Services/api';
+import GoogleMap from '../../Components/Maps';
+
 import Logo from '../../assets/logo.svg';
 import Lampadas from '../../assets/Lampadas.svg';
 import './style.css';
@@ -49,6 +52,7 @@ const Create: React.FC = () => {
               <span>Confirme o endereço no mapa</span>
             </legend>
 
+            <GoogleMap />
             <div className="field-group">
               <div className="field field-cut">
                 <label htmlFor="cep">Cep</label>
@@ -64,15 +68,19 @@ const Create: React.FC = () => {
                 <label htmlFor="number">Numero</label>
                 <input name="number" id="number" />
               </div>
-              <div className="field field-cut">
-                <label htmlFor="state">Estado</label>
-                <select name="state" id="state">
-                  <option value="">Selecione o estado</option>
-                </select>
+              <div className="field">
+                <label htmlFor="district">Bairro</label>
+                <input name="district" id="district" />
               </div>
-              <div className="field field-cut">
+            </div>
+            <div className="field-group">
+              <div className="field">
+                <label htmlFor="state">Estado</label>
+                <input name="state" id="state" />
+              </div>
+              <div className="field">
                 <label htmlFor="city">Cidade</label>
-                <select name="city" id="city"></select>
+                <input name="city" id="city" />
               </div>
             </div>
             <div className="field">
@@ -114,6 +122,9 @@ const Create: React.FC = () => {
               </li>
             </ul>
           </fieldset>
+          <button type="submit">
+            Cadastrar ponto de coleta
+          </button>
         </form>
       </div>
     </div>
